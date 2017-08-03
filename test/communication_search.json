@@ -1,0 +1,30 @@
+{
+  "query":{
+    "bool":{
+      "should":[
+        {
+          "terms":{
+            "from_email":[
+              "test_km1@capvision.com.cn"
+            ]
+          }
+        },
+        {
+          "terms":{
+            "to_email":[
+              "test_km1@capvision.com.cn"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort":{
+    "email_ts":{
+      "order":"desc",
+      "mode":"max"
+    }
+  },
+  "size":"10",
+  "from":"0"
+}
